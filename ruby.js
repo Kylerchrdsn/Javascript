@@ -11,13 +11,19 @@ String.prototype.merge({
     result = this.valueOf(); result = result.replace(/\..+/, '');
     result = result.replace(/\D/g, ''); return +result; 
   },
-  present: function(){ return (this.valueOf() != '') },
-  include: function(val){ return (this.search(val) != -1) }
+  present       : function(){ return (this.valueOf() != '') },
+  include       : function(val){ return (this.search(val) != -1) },
+  downcase      : function(){ return this.toLowerCase(); },
+  downcase_bang : function(){ this = this.toLowerCase(); return this; },
+  upcase        : function(){ return this.toUpperCase(); },
+  upcase_bang   : function(){ this = this.toUpperCase(); return this; }
 })
 
 // Number 
 //****************************************************************************
-Number.prototype.merge({to_s: function(){ return ''+this.valueOf(); }})
+Number.prototype.merge({
+  to_s: function(){ return ''+this.valueOf(); }
+})
 
 // Array 
 //****************************************************************************
