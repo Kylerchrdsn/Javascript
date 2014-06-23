@@ -14,9 +14,9 @@ String.prototype.merge({
   present       : function(){ return (this.valueOf() != '') },
   include       : function(val){ return (this.search(val) != -1) },
   downcase      : function(){ return this.toLowerCase(); },
-  downcase_bang : function(){ this = this.toLowerCase(); return this; },
-  upcase        : function(){ return this.toUpperCase(); },
-  upcase_bang   : function(){ this = this.toUpperCase(); return this; }
+  //downcase_bang : function(){ this = new String(this.toLowerCase()); return this.valueOf(); },
+  upcase        : function(){ return this.toUpperCase(); }
+  //upcase_bang   : function(){ this.value = this.toUpperCase(); return this; }
 })
 
 // Number 
